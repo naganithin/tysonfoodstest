@@ -4,7 +4,7 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
-// BSC provider (using a public endpoint; replace with a premium one for production)
+// BSC provider
 const INFURA_API_KEY = process.env.INFURA_API_KEY;
 const provider = new ethers.JsonRpcProvider(`https://bsc-mainnet.infura.io/v3/${INFURA_API_KEY}`);
 
@@ -29,7 +29,7 @@ app.use(express.json());
 app.get('/pancake-pairs', async (req, res) => {
   try {
     const pairCount = await factory.allPairsLength();
-    const limit = Math.min(req.query.limit ? parseInt(req.query.limit) : 10, Number(pairCount)); // Default to 10 pairs
+    const limit = Math.min(req.query.limit ? parseInt(req.query.limit) : 10, Number(pairCount));
     const pairs = [];
 
     // Fetch pair data
