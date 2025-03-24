@@ -6,7 +6,7 @@ const port = 3000;
 
 // BSC provider (using a public endpoint; replace with a premium one for production)
 const INFURA_API_KEY = process.env.INFURA_API_KEY;
-const provider = new ethers.JsonRpcProvider(`https://mainnet.infura.io/v3/${INFURA_API_KEY}`);
+const provider = new ethers.JsonRpcProvider(`https://bsc-mainnet.infura.io/v3/${INFURA_API_KEY}`);
 
 // PancakeSwap V2 Factory contract details
 const FACTORY_ADDRESS = '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73';
